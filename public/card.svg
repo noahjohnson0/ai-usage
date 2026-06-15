@@ -28,11 +28,11 @@
     <text x="477" y="33" class="sub" text-anchor="end">2 machines</text>
 
     <g class="pop" style="animation-delay:.05s">
-      <text x="20" y="64" class="big">2.52B</text>
+      <text x="20" y="64" class="big">2.54B</text>
       <text x="20" y="76" class="biglbl">TOKENS IN 2026</text>
     </g>
     <g class="pop" style="animation-delay:.12s">
-      <text x="190" y="64" class="big">2.62B</text>
+      <text x="190" y="64" class="big">2.64B</text>
       <text x="190" y="76" class="biglbl">ALL-TIME</text>
     </g>
     <g class="pop" style="animation-delay:.19s">
@@ -44,19 +44,25 @@
       <text x="20" y="96" class="lbl">Claude Code</text>
       <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#ffffff10"/>
       <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#d97757" class="bar" style="--bw:255px;animation-delay:0.15s"/>
-      <text x="477" y="96" class="val" text-anchor="end">2.14B tok</text>
+      <text x="477" y="96" class="val" text-anchor="end">2.15B tok</text>
     </g>
     <g class="row" style="animation-delay:0.27s">
       <text x="20" y="122" class="lbl">Cursor</text>
       <rect x="150" y="109" width="255" height="13" rx="6.5" fill="#ffffff10"/>
-      <rect x="150" y="109" width="57.537813959367774" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:57.537813959367774px;animation-delay:0.27s"/>
+      <rect x="150" y="109" width="57.11180940102331" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:57.11180940102331px;animation-delay:0.27s"/>
       <text x="477" y="122" class="val" text-anchor="end">482.3M tok</text>
     </g>
     <g class="row" style="animation-delay:0.39s">
-      <text x="20" y="148" class="lbl">OpenRouter</text>
+      <text x="20" y="148" class="lbl">Codex</text>
       <rect x="150" y="135" width="255" height="13" rx="6.5" fill="#ffffff10"/>
-      <rect x="150" y="135" width="15.299999999999999" height="13" rx="6.5" fill="#6e7bf2" class="bar" style="--bw:15.299999999999999px;animation-delay:0.39s"/>
-      <text x="477" y="148" class="val" text-anchor="end">active</text>
+      <rect x="150" y="135" width="6" height="13" rx="6.5" fill="#9aa0a6" class="bar" style="--bw:6px;animation-delay:0.39s"/>
+      <text x="477" y="148" class="val" text-anchor="end">4.9M tok</text>
+    </g>
+    <g class="row" style="animation-delay:0.51s">
+      <text x="20" y="174" class="lbl">OpenRouter</text>
+      <rect x="150" y="161" width="255" height="13" rx="6.5" fill="#ffffff10"/>
+      <rect x="150" y="161" width="15.299999999999999" height="13" rx="6.5" fill="#6e7bf2" class="bar" style="--bw:15.299999999999999px;animation-delay:0.51s"/>
+      <text x="477" y="174" class="val" text-anchor="end">active</text>
     </g>
   </g>
 </svg>

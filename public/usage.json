@@ -1,33 +1,33 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-15T20:14:31.418Z",
+  "generatedAt": "2026-06-15T20:26:55.329Z",
   "machines": [
     {
       "id": "svr",
       "platform": "win32",
-      "collectedAt": "2026-06-15T20:13:19.099Z"
+      "collectedAt": "2026-06-15T20:26:55.069Z"
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-15T20:14:31.417Z"
+      "collectedAt": "2026-06-15T20:26:55.328Z"
     }
   ],
   "tools": {
     "claude": {
       "available": true,
       "totals": {
-        "inputTokens": 2093762,
-        "outputTokens": 9055533,
-        "cacheCreationTokens": 32981747,
-        "cacheReadTokens": 2093366693,
-        "totalTokens": 2137497735
+        "inputTokens": 2097566,
+        "outputTokens": 9134648,
+        "cacheCreationTokens": 33118594,
+        "cacheReadTokens": 2109090806,
+        "totalTokens": 2153441614
       },
-      "totalTokens2026": 2137497735,
-      "totalTokensMonth": 2133102508,
+      "totalTokens2026": 2153441614,
+      "totalTokensMonth": 2149046387,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1772407510
+          "totalTokens": 1788351389
         },
         {
           "model": "claude-fable-5",
@@ -85,13 +85,13 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 840855813
+          "totalTokens": 856799692
         }
       ],
       "byMachine": [
         {
           "machine": "svr",
-          "totalTokens": 2137497735
+          "totalTokens": 2153441614
         }
       ]
     },
@@ -161,7 +161,7 @@
           "totalTokens": 0
         }
       ],
-      "collectedAt": "2026-06-15T20:13:19.099Z",
+      "collectedAt": "2026-06-15T20:26:55.069Z",
       "machine": "svr"
     },
     "openrouter": {
@@ -173,15 +173,39 @@
       "available": false
     },
     "codex": {
-      "available": false
+      "available": true,
+      "totals": {
+        "inputTokens": 4870468,
+        "cachedInputTokens": 4445440,
+        "outputTokens": 20212,
+        "reasoningOutputTokens": 7571,
+        "totalTokens": 4890680
+      },
+      "totalTokens": 4890680,
+      "totalTokens2026": 4890680,
+      "totalTokensMonth": 4890680,
+      "models": [
+        {
+          "model": "gpt-5.5",
+          "totalTokens": 4890680
+        }
+      ],
+      "limitPercent": 31,
+      "weeklyPercent": 5,
+      "sessions": 3
     }
   },
   "headline": {
-    "tokensMonth": 2133102508,
-    "tokens2026": 2519423234,
-    "totalTokens": 2619799488,
-    "outputTokens": 15573903,
+    "tokensMonth": 2153937067,
+    "tokens2026": 2540257793,
+    "totalTokens": 2640634047,
+    "outputTokens": 15673230,
     "modelsUsed": 14,
-    "machineCount": 2
+    "machineCount": 2,
+    "tokenAnchor": {
+      "value": 2540257793,
+      "atMs": 1781555215329,
+      "ratePerSec": 151
+    }
   }
 }
