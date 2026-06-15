@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-15T19:15:30.155Z",
+  "generatedAt": "2026-06-15T19:22:58.238Z",
   "machines": [
     {
       "id": "svr",
@@ -9,7 +9,7 @@
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-15T19:15:30.155Z"
+      "collectedAt": "2026-06-15T19:22:58.237Z"
     }
   ],
   "tools": {
