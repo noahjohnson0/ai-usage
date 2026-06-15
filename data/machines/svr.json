@@ -6,22 +6,22 @@
     "platform": "win32",
     "arch": "x64"
   },
-  "collectedAt": "2026-06-15T19:13:58.389Z",
+  "collectedAt": "2026-06-15T19:15:14.503Z",
   "tools": {
     "claude": {
       "available": true,
       "source": "local:ccusage",
       "totals": {
-        "inputTokens": 1395520,
-        "outputTokens": 8361187,
-        "cacheCreationTokens": 31068107,
-        "cacheReadTokens": 1992022742,
-        "totalTokens": 2032847556
+        "inputTokens": 1395719,
+        "outputTokens": 8364122,
+        "cacheCreationTokens": 31071721,
+        "cacheReadTokens": 1992760382,
+        "totalTokens": 2033591944
       },
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1672647257
+          "totalTokens": 1673391645
         },
         {
           "model": "claude-fable-5",
@@ -79,7 +79,7 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 736205634
+          "totalTokens": 736950022
         }
       ],
       "days": 10
