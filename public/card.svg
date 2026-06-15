@@ -1,0 +1,62 @@
+<svg width="495" height="220" viewBox="0 0 495 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI usage stats">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d97757"/>
+      <stop offset="0.5" stop-color="#b07bf2"/>
+      <stop offset="1" stop-color="#6e7bf2"/>
+    </linearGradient>
+    <style>
+      .card{font-family:'Segoe UI',Ubuntu,Helvetica,Arial,sans-serif}
+      .title{fill:url(#hdr);font-size:19px;font-weight:700;background-size:200% auto;animation:shimmer 6s linear infinite}
+      .sub{fill:#8b949e;font-size:10.5px}
+      .big{fill:#e6edf3;font-size:26px;font-weight:800}
+      .biglbl{fill:#8b949e;font-size:9.5px;letter-spacing:.5px}
+      .lbl{fill:#c9d1d9;font-size:12px}
+      .val{fill:#e6edf3;font-size:12px;font-weight:600}
+      .row{animation:fadeUp .6s ease backwards}
+      .bar{transform-origin:left;animation:grow 1s cubic-bezier(.2,.8,.2,1) backwards}
+      @keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes grow{from{width:0}to{width:var(--bw)}}
+      @keyframes shimmer{to{background-position:200% center}}
+      .pop{animation:fadeUp .7s ease backwards}
+    </style>
+  </defs>
+  <rect x="0.5" y="0.5" width="494" height="219" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <g class="card">
+    <text x="20" y="32" class="title">AI Coding Usage</text>
+    <text x="477" y="20" class="sub" text-anchor="end">updated 2026-06-15</text>
+    <text x="477" y="33" class="sub" text-anchor="end">2 machines</text>
+
+    <g class="pop" style="animation-delay:.05s">
+      <text x="20" y="64" class="big">2.03B</text>
+      <text x="20" y="76" class="biglbl">TOTAL TOKENS</text>
+    </g>
+    <g class="pop" style="animation-delay:.12s">
+      <text x="190" y="64" class="big">8.3M</text>
+      <text x="190" y="76" class="biglbl">GENERATED</text>
+    </g>
+    <g class="pop" style="animation-delay:.19s">
+      <text x="350" y="64" class="big">4</text>
+      <text x="350" y="76" class="biglbl">MODELS</text>
+    </g>
+    
+    <g class="row" style="animation-delay:0.15s">
+      <text x="20" y="96" class="lbl">Claude Code</text>
+      <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#ffffff10"/>
+      <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#d97757" class="bar" style="--bw:255px;animation-delay:0.15s"/>
+      <text x="477" y="96" class="val" text-anchor="end">2.03B tok</text>
+    </g>
+    <g class="row" style="animation-delay:0.27s">
+      <text x="20" y="122" class="lbl">Cursor</text>
+      <rect x="150" y="109" width="255" height="13" rx="6.5" fill="#ffffff10"/>
+      <rect x="150" y="109" width="10.200000000000001" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:10.200000000000001px;animation-delay:0.27s"/>
+      <text x="477" y="122" class="val" text-anchor="end">0 / 2000 req</text>
+    </g>
+    <g class="row" style="animation-delay:0.39s">
+      <text x="20" y="148" class="lbl">OpenRouter</text>
+      <rect x="150" y="135" width="255" height="13" rx="6.5" fill="#ffffff10"/>
+      <rect x="150" y="135" width="15.299999999999999" height="13" rx="6.5" fill="#6e7bf2" class="bar" style="--bw:15.299999999999999px;animation-delay:0.39s"/>
+      <text x="477" y="148" class="val" text-anchor="end">active</text>
+    </g>
+  </g>
+</svg>

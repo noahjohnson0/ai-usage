@@ -1,0 +1,9 @@
+node_modules/
+*.log
+_*.png
+public/_*
+*.local.html
+.DS_Store
+.env
+.env.local
+reporter/secrets.local.json

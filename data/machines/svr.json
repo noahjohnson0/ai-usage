@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "machine": {
+    "id": "svr",
+    "hostname": "svr",
+    "platform": "win32",
+    "arch": "x64"
+  },
+  "collectedAt": "2026-06-15T19:09:25.068Z",
+  "tools": {
+    "claude": {
+      "available": true,
+      "source": "local:ccusage",
+      "totals": {
+        "inputTokens": 1382203,
+        "outputTokens": 8332637,
+        "cacheCreationTokens": 31021880,
+        "cacheReadTokens": 1986287098,
+        "totalTokens": 2027023818
+      },
+      "models": [
+        {
+          "model": "claude-opus-4-8",
+          "totalTokens": 1666824273
+        },
+        {
+          "model": "claude-fable-5",
+          "totalTokens": 330482788
+        },
+        {
+          "model": "claude-haiku-4-5-20251001",
+          "totalTokens": 25321530
+        },
+        {
+          "model": "claude-opus-4-7",
+          "totalTokens": 4395227
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-05-22",
+          "totalTokens": 210305
+        },
+        {
+          "date": "2026-05-23",
+          "totalTokens": 4123779
+        },
+        {
+          "date": "2026-05-27",
+          "totalTokens": 61143
+        },
+        {
+          "date": "2026-06-03",
+          "totalTokens": 704609
+        },
+        {
+          "date": "2026-06-07",
+          "totalTokens": 878057
+        },
+        {
+          "date": "2026-06-11",
+          "totalTokens": 338175062
+        },
+        {
+          "date": "2026-06-12",
+          "totalTokens": 123604076
+        },
+        {
+          "date": "2026-06-13",
+          "totalTokens": 255231197
+        },
+        {
+          "date": "2026-06-14",
+          "totalTokens": 573653694
+        },
+        {
+          "date": "2026-06-15",
+          "totalTokens": 730381896
+        }
+      ],
+      "days": 10
+    },
+    "cursor": {
+      "available": true,
+      "source": "local-token:cursor-dashboard-api",
+      "membership": "pro",
+      "billingCycle": {
+        "start": "2026-06-07T20:59:17.000Z",
+        "end": "2026-07-07T20:59:17.000Z"
+      },
+      "plan": {
+        "used": 0,
+        "limit": 2000,
+        "remaining": 2000
+      },
+      "onDemand": {
+        "used": 0,
+        "limit": 10000
+      },
+      "percentUsed": 0,
+      "models": []
+    },
+    "openrouter": {
+      "available": true,
+      "source": "cloud:openrouter-api",
+      "hasPerModel": false
+    },
+    "kimi": {
+      "available": false,
+      "note": "no kimi session/key configured"
+    },
+    "codex": {
+      "available": false,
+      "note": "no chatgpt session configured"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ai-usage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Aggregate AI coding-tool usage (Claude, Cursor, OpenRouter, Kimi, Codex) from every machine into one dashboard + GitHub profile card.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "collect": "node reporter/collect.mjs",
+    "collect:push": "node reporter/collect.mjs --push",
+    "merge": "node scripts/merge.mjs",
+    "render": "node scripts/render-svg.mjs"
+  }
+}
