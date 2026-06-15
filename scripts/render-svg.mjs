@@ -28,7 +28,7 @@ const t = data.tools;
 // Build the tool rows with a comparable magnitude for bar scaling.
 const rows = [];
 if (t.claude?.available) rows.push({ label: "Claude Code", display: human(t.claude.totals.totalTokens) + " tok", color: "#d97757", weight: t.claude.totals.totalTokens });
-if (t.cursor?.available) rows.push({ label: "Cursor", display: (t.cursor.plan?.used || 0) + " / " + (t.cursor.plan?.limit || 0) + " req", color: "#3ec6b8", weight: Math.max(0.04, (t.cursor.percentUsed || 0) / 100) * (t.claude?.totals?.totalTokens || 1e9) });
+if (t.cursor?.available) rows.push({ label: "Cursor", display: (t.cursor.totalTokens ? human(t.cursor.totalTokens) + " tok" : (t.cursor.plan?.used || 0) + " / " + (t.cursor.plan?.limit || 0) + " req"), color: "#3ec6b8", weight: t.cursor.totalTokens || 0.04 * (t.claude?.totals?.totalTokens || 1e9) });
 if (t.openrouter?.available) rows.push({ label: "OpenRouter", display: "active", color: "#6e7bf2", weight: 0.06 * (t.claude?.totals?.totalTokens || 1e9) });
 if (t.kimi?.available) rows.push({ label: "Kimi", display: "active", color: "#b07bf2", weight: 0.04 * (t.claude?.totals?.totalTokens || 1e9) });
 if (t.codex?.available) rows.push({ label: "Codex", display: "active", color: "#9aa0a6", weight: 0.04 * (t.claude?.totals?.totalTokens || 1e9) });

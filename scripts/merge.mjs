@@ -102,12 +102,21 @@ const merged = {
   },
 };
 
-// Token-centric headline (no dollars on public surfaces).
+// Token-centric headline across ALL tools (no dollars on public surfaces).
 const claude = merged.tools.claude;
+const cursor = merged.tools.cursor;
+const claudeTok = claude.available ? claude.totals.totalTokens : 0;
+const cursorTok = cursor.available ? cursor.totalTokens || 0 : 0;
+const claudeOut = claude.available ? claude.totals.outputTokens : 0;
+const cursorOut = cursor.available ? cursor.tokenTotals?.outputTokens || 0 : 0;
+const modelNames = new Set([
+  ...(claude.available ? claude.models.map((m) => m.model) : []),
+  ...(cursor.available ? (cursor.models || []).map((m) => m.model) : []),
+]);
 merged.headline = {
-  totalTokens: claude.available ? claude.totals.totalTokens : 0,
-  outputTokens: claude.available ? claude.totals.outputTokens : 0,
-  modelsUsed: claude.available ? claude.models.length : 0,
+  totalTokens: claudeTok + cursorTok,
+  outputTokens: claudeOut + cursorOut,
+  modelsUsed: modelNames.size,
   machineCount: merged.machines.length,
 };
 

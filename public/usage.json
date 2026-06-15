@@ -1,31 +1,31 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-15T19:22:58.238Z",
+  "generatedAt": "2026-06-15T19:49:53.989Z",
   "machines": [
     {
       "id": "svr",
       "platform": "win32",
-      "collectedAt": "2026-06-15T19:15:14.503Z"
+      "collectedAt": "2026-06-15T19:49:53.753Z"
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-15T19:22:58.237Z"
+      "collectedAt": "2026-06-15T19:49:53.988Z"
     }
   ],
   "tools": {
     "claude": {
       "available": true,
       "totals": {
-        "inputTokens": 1395719,
-        "outputTokens": 8364122,
-        "cacheCreationTokens": 31071721,
-        "cacheReadTokens": 1992760382,
-        "totalTokens": 2033591944
+        "inputTokens": 2039587,
+        "outputTokens": 8874409,
+        "cacheCreationTokens": 32706152,
+        "cacheReadTokens": 2048541882,
+        "totalTokens": 2092162030
       },
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1673391645
+          "totalTokens": 1727254243
         },
         {
           "model": "claude-fable-5",
@@ -36,12 +36,12 @@
           "totalTokens": 25321530
         },
         {
-          "model": "claude-opus-4-7",
-          "totalTokens": 4395227
+          "model": "gpt-5.5",
+          "totalTokens": 4708242
         },
         {
-          "model": "gpt-5",
-          "totalTokens": 754
+          "model": "claude-opus-4-7",
+          "totalTokens": 4395227
         }
       ],
       "daily": [
@@ -83,13 +83,13 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 736950022
+          "totalTokens": 795520108
         }
       ],
       "byMachine": [
         {
           "machine": "svr",
-          "totalTokens": 2033591944
+          "totalTokens": 2092162030
         }
       ]
     },
@@ -111,8 +111,53 @@
         "limit": 10000
       },
       "percentUsed": 0,
-      "models": [],
-      "collectedAt": "2026-06-15T19:15:14.503Z",
+      "totalTokens": 482301753,
+      "tokenTotals": {
+        "inputTokens": 17602878,
+        "outputTokens": 6518370,
+        "cacheCreationTokens": 22543936,
+        "cacheReadTokens": 435636569,
+        "totalTokens": 482301753
+      },
+      "models": [
+        {
+          "model": "default",
+          "totalTokens": 414918376
+        },
+        {
+          "model": "gpt-5.2",
+          "totalTokens": 40476665
+        },
+        {
+          "model": "composer-1",
+          "totalTokens": 15581840
+        },
+        {
+          "model": "claude-3.5-sonnet",
+          "totalTokens": 6196899
+        },
+        {
+          "model": "claude-4.5-sonnet-thinking",
+          "totalTokens": 5127973
+        },
+        {
+          "model": "claude-4-sonnet",
+          "totalTokens": 0
+        },
+        {
+          "model": "gpt-4o",
+          "totalTokens": 0
+        },
+        {
+          "model": "gpt-4o-mini",
+          "totalTokens": 0
+        },
+        {
+          "model": "claude-4-sonnet-thinking",
+          "totalTokens": 0
+        }
+      ],
+      "collectedAt": "2026-06-15T19:49:53.753Z",
       "machine": "svr"
     },
     "openrouter": {
@@ -128,9 +173,9 @@
     }
   },
   "headline": {
-    "totalTokens": 2033591944,
-    "outputTokens": 8364122,
-    "modelsUsed": 5,
+    "totalTokens": 2574463783,
+    "outputTokens": 15392779,
+    "modelsUsed": 14,
     "machineCount": 2
   }
 }

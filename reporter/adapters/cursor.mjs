@@ -51,6 +51,54 @@ async function cursorGet(url, cookie) {
   return r.json();
 }
 
+async function cursorPost(url, cookie, body) {
+  const r = await fetch(url, {
+    method: "POST",
+    headers: {
+      Cookie: cookie,
+      Origin: "https://cursor.com",
+      "Content-Type": "application/json",
+      "User-Agent": "ai-usage-reporter",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error(`${url} -> HTTP ${r.status}`);
+  return r.json();
+}
+
+const num = (x) => Number(x || 0);
+
+// Cursor's aggregated-usage endpoint refuses a window that crosses its internal
+// storage boundaries, but the 400 body names the boundary dates ("Split the
+// query at one of those dates"). Recursively split on those and collect every
+// servable sub-window so we capture full history, not just the last segment.
+async function aggWindow(cookie, startMs, endMs, depth = 0) {
+  const url = "https://cursor.com/api/dashboard/get-aggregated-usage-events";
+  let j;
+  try {
+    const r = await fetch(url, {
+      method: "POST",
+      headers: { Cookie: cookie, Origin: "https://cursor.com", "Content-Type": "application/json", "User-Agent": "ai-usage-reporter" },
+      body: JSON.stringify({ startDate: String(Math.round(startMs)), endDate: String(Math.round(endMs)) }),
+    });
+    j = await r.json();
+    if (r.ok && Array.isArray(j.aggregations)) return [j];
+  } catch {
+    return [];
+  }
+  if (depth >= 6) return [];
+  const detail = j?.error?.details?.[0]?.details?.detail || "";
+  const bounds = [...detail.matchAll(/(\d{4}-\d{2}-\d{2}T[0-9:.]+Z)/g)]
+    .map((m) => Date.parse(m[1]))
+    .filter((t) => t > startMs + 1 && t < endMs - 1)
+    .sort((a, b) => a - b);
+  if (!bounds.length) return [];
+  const b = bounds[0];
+  const left = await aggWindow(cookie, startMs, b - 1, depth + 1);
+  const right = await aggWindow(cookie, b, endMs, depth + 1);
+  return [...left, ...right];
+}
+
 export async function collectCursor() {
   const dbPath = stateDbPath();
   if (!fs.existsSync(dbPath)) {
@@ -75,25 +123,48 @@ export async function collectCursor() {
 
   try {
     const summary = await cursorGet("https://cursor.com/api/usage-summary", cookie);
-    let perModel = {};
+
+    // Token-level history (per-model, all-time-ish). This is the real volume —
+    // the plan used/limit below only reflects the current billing cycle.
+    let tokenTotals = null;
+    let models = [];
     try {
-      perModel = await cursorGet(`https://cursor.com/api/usage?user=${userId}`, cookie);
+      const end = Date.now();
+      const start = end - 800 * 24 * 60 * 60 * 1000; // ~2.2 years back; split as needed
+      const responses = await aggWindow(cookie, start, end, 0);
+      const byModel = new Map();
+      for (const j of responses) {
+        for (const a of j.aggregations || []) {
+          const k = a.modelIntent || "default";
+          const p = byModel.get(k) || { model: k, inputTokens: 0, outputTokens: 0, cacheCreationTokens: 0, cacheReadTokens: 0 };
+          p.inputTokens += num(a.inputTokens);
+          p.outputTokens += num(a.outputTokens);
+          p.cacheCreationTokens += num(a.cacheWriteTokens);
+          p.cacheReadTokens += num(a.cacheReadTokens);
+          byModel.set(k, p);
+        }
+      }
+      if (byModel.size) {
+        tokenTotals = { inputTokens: 0, outputTokens: 0, cacheCreationTokens: 0, cacheReadTokens: 0, totalTokens: 0 };
+        models = [...byModel.values()]
+          .map((m) => {
+            const totalTokens = m.inputTokens + m.outputTokens + m.cacheCreationTokens + m.cacheReadTokens;
+            tokenTotals.inputTokens += m.inputTokens;
+            tokenTotals.outputTokens += m.outputTokens;
+            tokenTotals.cacheCreationTokens += m.cacheCreationTokens;
+            tokenTotals.cacheReadTokens += m.cacheReadTokens;
+            tokenTotals.totalTokens += totalTokens;
+            return { model: m.model, totalTokens };
+          })
+          .sort((a, b) => b.totalTokens - a.totalTokens);
+      }
     } catch {
-      /* per-model endpoint optional */
+      /* aggregated endpoint optional */
     }
 
     const ind = summary.individualUsage || {};
     const plan = ind.plan || {};
     const onDemand = ind.onDemand || {};
-
-    const models = Object.entries(perModel)
-      .filter(([, v]) => v && typeof v === "object" && "numRequests" in v)
-      .map(([name, v]) => ({
-        model: name,
-        requests: v.numRequests || 0,
-        totalTokens: v.numTokens || 0,
-      }))
-      .filter((m) => m.requests || m.totalTokens);
 
     return {
       available: true,
@@ -106,6 +177,8 @@ export async function collectCursor() {
       plan: { used: plan.used || 0, limit: plan.limit || 0, remaining: plan.remaining ?? null },
       onDemand: { used: onDemand.used || 0, limit: onDemand.limit || 0 },
       percentUsed: plan.totalPercentUsed ?? null,
+      totalTokens: tokenTotals ? tokenTotals.totalTokens : 0,
+      tokenTotals,
       models,
     };
   } catch (e) {
