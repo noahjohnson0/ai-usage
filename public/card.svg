@@ -32,11 +32,11 @@
       <text x="20" y="76" class="biglbl">TOTAL TOKENS</text>
     </g>
     <g class="pop" style="animation-delay:.12s">
-      <text x="190" y="64" class="big">8.3M</text>
+      <text x="190" y="64" class="big">8.4M</text>
       <text x="190" y="76" class="biglbl">GENERATED</text>
     </g>
     <g class="pop" style="animation-delay:.19s">
-      <text x="350" y="64" class="big">4</text>
+      <text x="350" y="64" class="big">5</text>
       <text x="350" y="76" class="biglbl">MODELS</text>
     </g>
     
@@ -49,7 +49,7 @@
     <g class="row" style="animation-delay:0.27s">
       <text x="20" y="122" class="lbl">Cursor</text>
       <rect x="150" y="109" width="255" height="13" rx="6.5" fill="#ffffff10"/>
-      <rect x="150" y="109" width="10.200000000000001" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:10.200000000000001px;animation-delay:0.27s"/>
+      <rect x="150" y="109" width="10.2" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:10.2px;animation-delay:0.27s"/>
       <text x="477" y="122" class="val" text-anchor="end">0 / 2000 req</text>
     </g>
     <g class="row" style="animation-delay:0.39s">
