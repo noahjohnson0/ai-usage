@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-15T20:33:31.206Z",
+  "generatedAt": "2026-06-15T20:35:54.894Z",
   "machines": [
     {
       "id": "svr",
@@ -9,7 +9,7 @@
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-15T20:33:31.205Z"
+      "collectedAt": "2026-06-15T20:35:54.893Z"
     }
   ],
   "tools": {
@@ -220,8 +220,8 @@
     "modelsUsed": 15,
     "machineCount": 2,
     "tokenAnchor": {
-      "value": 2801642972,
-      "atMs": 1781555611206,
+      "value": 2801666824,
+      "atMs": 1781555754895,
       "ratePerSec": 166
     }
   }
