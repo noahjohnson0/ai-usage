@@ -20,6 +20,19 @@ import { collectCodex } from "./adapters/codex.mjs";
 const repoRoot = path.resolve(fileURLToPath(import.meta.url), "../..");
 const push = process.argv.includes("--push");
 
+// Optional local secrets (gitignored) so scrapers can run without exporting env
+// vars: { "KIMI_COOKIE": "...", "CHATGPT_SESSION_TOKEN": "...",
+//         "MOONSHOT_API_KEY": "...", "OPENROUTER_PROVISIONING_KEY": "..." }
+try {
+  const secretsPath = path.join(repoRoot, "reporter", "secrets.local.json");
+  if (fs.existsSync(secretsPath)) {
+    const secrets = JSON.parse(fs.readFileSync(secretsPath, "utf8"));
+    for (const [k, v] of Object.entries(secrets)) if (!process.env[k]) process.env[k] = v;
+  }
+} catch (e) {
+  console.error("could not load secrets.local.json:", e.message);
+}
+
 async function safe(name, fn) {
   try {
     return await fn();
