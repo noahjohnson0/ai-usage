@@ -7,3 +7,5 @@ public/_*
 .env
 .env.local
 reporter/secrets.local.json
+
+scripts/last-run.log
