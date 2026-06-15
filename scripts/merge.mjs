@@ -80,6 +80,7 @@ function mergeClaude(slices) {
 function mergeSummed(slices, tool) {
   const totals = { inputTokens: 0, outputTokens: 0, cacheCreationTokens: 0, cacheReadTokens: 0, totalTokens: 0 };
   const models = new Map();
+  const daily = new Map();
   let any = false;
   let totalTokens2026 = 0;
   let totalTokensMonth = 0;
@@ -100,6 +101,9 @@ function mergeSummed(slices, tool) {
       p.totalTokens += m.totalTokens;
       models.set(m.model, p);
     }
+    for (const d of c.daily || []) {
+      if (d.date) daily.set(d.date, (daily.get(d.date) || 0) + (d.totalTokens || 0));
+    }
     if ((s.collectedAt || "") >= bestTs) {
       bestTs = s.collectedAt || "";
       if (c.limitPercent != null) limitPercent = c.limitPercent;
@@ -114,6 +118,7 @@ function mergeSummed(slices, tool) {
     totalTokens2026,
     totalTokensMonth,
     models: [...models.values()].sort((a, b) => b.totalTokens - a.totalTokens),
+    daily: [...daily.entries()].map(([date, totalTokens]) => ({ date, totalTokens })).sort((a, b) => (a.date < b.date ? -1 : 1)),
   };
   if (limitPercent != null) out.limitPercent = limitPercent;
   if (weeklyPercent != null) out.weeklyPercent = weeklyPercent;
@@ -177,6 +182,20 @@ merged.headline = {
   modelsUsed: modelNames.size,
   machineCount: merged.machines.length,
 };
+
+// Combined daily trend across the local-rollout tools that expose per-day data
+// (Claude + Codex + Kimi). Cursor's API doesn't give daily without per-event
+// pagination, so it's omitted from the trend (its totals still count elsewhere).
+const dailyMap = new Map();
+for (const t of [claude, codex, kimi]) {
+  if (!t.available) continue;
+  for (const d of t.daily || []) {
+    if (d.date) dailyMap.set(d.date, (dailyMap.get(d.date) || 0) + (d.totalTokens || 0));
+  }
+}
+merged.dailyCombined = [...dailyMap.entries()]
+  .map(([date, totalTokens]) => ({ date, totalTokens }))
+  .sort((a, b) => (a.date < b.date ? -1 : 1));
 
 // Monotonic live-ticker anchor: every client computes value + ratePerSec*(now-atMs),
 // a pure function of wall-clock time, so the number is identical for all viewers

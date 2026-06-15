@@ -36,6 +36,7 @@ export async function collectKimi() {
   const monthStart = new Date().toISOString().slice(0, 7) + "-01";
   const totals = { inputTokens: 0, outputTokens: 0, cacheCreationTokens: 0, cacheReadTokens: 0, totalTokens: 0 };
   const byModel = new Map();
+  const byDay = new Map();
   let totalTokens2026 = 0;
   let totalTokensMonth = 0;
   let turns = 0;
@@ -75,6 +76,7 @@ export async function collectKimi() {
       const p = byModel.get(model) || { model, totalTokens: 0 };
       p.totalTokens += total;
       byModel.set(model, p);
+      if (day) byDay.set(day, (byDay.get(day) || 0) + total);
     }
   }
 
@@ -87,6 +89,7 @@ export async function collectKimi() {
     totalTokens2026,
     totalTokensMonth,
     models: [...byModel.values()].sort((a, b) => b.totalTokens - a.totalTokens),
+    daily: [...byDay.entries()].map(([date, totalTokens]) => ({ date, totalTokens })).sort((a, b) => (a.date < b.date ? -1 : 1)),
     turns,
   };
 }

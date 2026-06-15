@@ -6,24 +6,24 @@
     "platform": "win32",
     "arch": "x64"
   },
-  "collectedAt": "2026-06-15T20:33:30.942Z",
+  "collectedAt": "2026-06-15T22:18:58.369Z",
   "tools": {
     "claude": {
       "available": true,
       "source": "local:ccusage",
       "totals": {
-        "inputTokens": 2100233,
-        "outputTokens": 9190253,
-        "cacheCreationTokens": 33195379,
-        "cacheReadTokens": 2123919889,
-        "totalTokens": 2168405754
+        "inputTokens": 2234356,
+        "outputTokens": 9632824,
+        "cacheCreationTokens": 33956640,
+        "cacheReadTokens": 2237861088,
+        "totalTokens": 2283684908
       },
-      "totalTokens2026": 2168405754,
-      "totalTokensMonth": 2164010527,
+      "totalTokens2026": 2283684908,
+      "totalTokensMonth": 2279289681,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1803315529
+          "totalTokens": 1917808609
         },
         {
           "model": "claude-fable-5",
@@ -35,7 +35,7 @@
         },
         {
           "model": "gpt-5.5",
-          "totalTokens": 4890680
+          "totalTokens": 5676754
         },
         {
           "model": "claude-opus-4-7",
@@ -81,7 +81,7 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 871763832
+          "totalTokens": 987042986
         }
       ],
       "days": 10
@@ -89,30 +89,30 @@
     "cursor": {
       "available": true,
       "source": "local-token:cursor-dashboard-api",
-      "totalTokens2026": 381925499,
-      "totalTokensMonth": 0,
+      "totalTokens2026": 382990737,
+      "totalTokensMonth": 1065238,
       "membership": "pro",
       "billingCycle": {
         "start": "2026-06-07T20:59:17.000Z",
         "end": "2026-07-07T20:59:17.000Z"
       },
       "plan": {
-        "used": 0,
+        "used": 32,
         "limit": 2000,
-        "remaining": 2000
+        "remaining": 1968
       },
       "onDemand": {
         "used": 0,
         "limit": 10000
       },
-      "percentUsed": 0,
-      "totalTokens": 482301753,
+      "percentUsed": 0.1641025641025641,
+      "totalTokens": 483366991,
       "tokenTotals": {
-        "inputTokens": 17602878,
-        "outputTokens": 6518370,
+        "inputTokens": 17710037,
+        "outputTokens": 6552382,
         "cacheCreationTokens": 22543936,
-        "cacheReadTokens": 435636569,
-        "totalTokens": 482301753
+        "cacheReadTokens": 436560636,
+        "totalTokens": 483366991
       },
       "models": [
         {
@@ -134,6 +134,10 @@
         {
           "model": "claude-4.5-sonnet-thinking",
           "totalTokens": 5127973
+        },
+        {
+          "model": "composer-2.5",
+          "totalTokens": 1065238
         },
         {
           "model": "claude-4-sonnet",
@@ -177,30 +181,50 @@
           "totalTokens": 246421039
         }
       ],
+      "daily": [
+        {
+          "date": "2026-06-13",
+          "totalTokens": 13706321
+        },
+        {
+          "date": "2026-06-14",
+          "totalTokens": 9513342
+        },
+        {
+          "date": "2026-06-15",
+          "totalTokens": 223201376
+        }
+      ],
       "turns": 2085
     },
     "codex": {
       "available": true,
       "source": "local:codex-rollouts",
       "totals": {
-        "inputTokens": 4870468,
-        "cachedInputTokens": 4445440,
-        "outputTokens": 20212,
-        "reasoningOutputTokens": 7571,
-        "totalTokens": 4890680
+        "inputTokens": 5643979,
+        "cachedInputTokens": 5119616,
+        "outputTokens": 32775,
+        "reasoningOutputTokens": 14013,
+        "totalTokens": 5676754
       },
-      "totalTokens": 4890680,
-      "totalTokens2026": 4890680,
-      "totalTokensMonth": 4890680,
+      "totalTokens": 5676754,
+      "totalTokens2026": 5676754,
+      "totalTokensMonth": 5676754,
       "models": [
         {
           "model": "gpt-5.5",
-          "totalTokens": 4890680
+          "totalTokens": 5676754
         }
       ],
-      "limitPercent": 31,
-      "weeklyPercent": 5,
-      "sessions": 3
+      "daily": [
+        {
+          "date": "2026-06-15",
+          "totalTokens": 5676754
+        }
+      ],
+      "limitPercent": 10,
+      "weeklyPercent": 7,
+      "sessions": 4
     }
   }
 }
