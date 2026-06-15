@@ -65,6 +65,11 @@ export async function collectClaude() {
     }
   }
 
+  // Period scoping: daily entries are dated YYYY-MM-DD, so string compares work.
+  const monthStart = new Date().toISOString().slice(0, 7) + "-01";
+  const sumSince = (cut) =>
+    daily.filter((d) => (d.date || d.period || "") >= cut).reduce((a, d) => a + (d.totalTokens || 0), 0);
+
   return {
     available: true,
     source: "local:ccusage",
@@ -76,6 +81,8 @@ export async function collectClaude() {
       totalTokens: t.totalTokens || 0,
       costUsd: round(t.totalCost || 0), // API-equivalent value on a subscription
     },
+    totalTokens2026: sumSince("2026-01-01"),
+    totalTokensMonth: sumSince(monthStart),
     models: [...modelMap.values()]
       .map((m) => ({ ...m, cost: round(m.cost) }))
       .sort((a, b) => b.totalTokens - a.totalTokens),

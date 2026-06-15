@@ -37,6 +37,8 @@ function mergeClaude(slices) {
   const models = new Map();
   const daily = new Map();
   let any = false;
+  let tokens2026 = 0;
+  let tokensMonth = 0;
   const byMachine = [];
 
   for (const s of slices) {
@@ -44,6 +46,8 @@ function mergeClaude(slices) {
     if (!c?.available) continue;
     any = true;
     for (const k of Object.keys(totals)) totals[k] += c.totals?.[k] || 0;
+    tokens2026 += c.totalTokens2026 || 0;
+    tokensMonth += c.totalTokensMonth || 0;
     byMachine.push({ machine: s.machine.id, totalTokens: c.totals.totalTokens, costUsd: c.totals.costUsd });
     for (const m of c.models || []) {
       const p = models.get(m.model) || { model: m.model, totalTokens: 0, cost: 0 };
@@ -63,6 +67,8 @@ function mergeClaude(slices) {
   return {
     available: true,
     totals: { ...totals, costUsd: round(totals.costUsd) },
+    totalTokens2026: tokens2026,
+    totalTokensMonth: tokensMonth,
     models: [...models.values()].map((m) => ({ ...m, cost: round(m.cost) })).sort((a, b) => b.totalTokens - a.totalTokens),
     daily: [...daily.values()].sort((a, b) => (a.date < b.date ? -1 : 1)),
     byMachine,
@@ -113,8 +119,14 @@ const modelNames = new Set([
   ...(claude.available ? claude.models.map((m) => m.model) : []),
   ...(cursor.available ? (cursor.models || []).map((m) => m.model) : []),
 ]);
+const claude2026 = claude.available ? claude.totalTokens2026 || 0 : 0;
+const cursor2026 = cursor.available ? cursor.totalTokens2026 || 0 : 0;
+const claudeMonth = claude.available ? claude.totalTokensMonth || 0 : 0;
+const cursorMonth = cursor.available ? cursor.totalTokensMonth || 0 : 0;
 merged.headline = {
-  totalTokens: claudeTok + cursorTok,
+  tokensMonth: claudeMonth + cursorMonth,
+  tokens2026: claude2026 + cursor2026,
+  totalTokens: claudeTok + cursorTok, // all-time
   outputTokens: claudeOut + cursorOut,
   modelsUsed: modelNames.size,
   machineCount: merged.machines.length,

@@ -72,20 +72,30 @@ const num = (x) => Number(x || 0);
 // storage boundaries, but the 400 body names the boundary dates ("Split the
 // query at one of those dates"). Recursively split on those and collect every
 // servable sub-window so we capture full history, not just the last segment.
+const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+
 async function aggWindow(cookie, startMs, endMs, depth = 0) {
   const url = "https://cursor.com/api/dashboard/get-aggregated-usage-events";
   let j;
-  try {
-    const r = await fetch(url, {
-      method: "POST",
-      headers: { Cookie: cookie, Origin: "https://cursor.com", "Content-Type": "application/json", "User-Agent": "ai-usage-reporter" },
-      body: JSON.stringify({ startDate: String(Math.round(startMs)), endDate: String(Math.round(endMs)) }),
-    });
-    j = await r.json();
-    if (r.ok && Array.isArray(j.aggregations)) return [j];
-  } catch {
-    return [];
+  // Retry transient failures (429/5xx/network) with backoff — multiple period
+  // windows fire in sequence and Cursor will rate-limit a burst otherwise.
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      const r = await fetch(url, {
+        method: "POST",
+        headers: { Cookie: cookie, Origin: "https://cursor.com", "Content-Type": "application/json", "User-Agent": "ai-usage-reporter" },
+        body: JSON.stringify({ startDate: String(Math.round(startMs)), endDate: String(Math.round(endMs)) }),
+      });
+      j = await r.json();
+      if (r.ok && Array.isArray(j.aggregations)) return [j];
+      // A 400 "split the query" is not transient — break out to the split logic.
+      if (r.status === 400) break;
+      await sleep(400 * (attempt + 1));
+    } catch {
+      await sleep(400 * (attempt + 1));
+    }
   }
+  if (!j) return [];
   if (depth >= 6) return [];
   const detail = j?.error?.details?.[0]?.details?.detail || "";
   const bounds = [...detail.matchAll(/(\d{4}-\d{2}-\d{2}T[0-9:.]+Z)/g)]
@@ -162,6 +172,26 @@ export async function collectCursor() {
       /* aggregated endpoint optional */
     }
 
+    // Period totals (2026 year-to-date + current calendar month). Each window is
+    // split across Cursor's storage boundaries by aggWindow, then summed.
+    const periodTotal = async (startMs) => {
+      const resp = await aggWindow(cookie, startMs, Date.now(), 0);
+      let total = 0;
+      for (const j of resp)
+        for (const a of j.aggregations || [])
+          total += num(a.inputTokens) + num(a.outputTokens) + num(a.cacheWriteTokens) + num(a.cacheReadTokens);
+      return total;
+    };
+    let totalTokens2026 = 0;
+    let totalTokensMonth = 0;
+    try {
+      const monthStartIso = new Date().toISOString().slice(0, 7) + "-01T00:00:00Z";
+      totalTokens2026 = await periodTotal(Date.parse("2026-01-01T00:00:00Z"));
+      totalTokensMonth = await periodTotal(Date.parse(monthStartIso));
+    } catch {
+      /* period windows optional */
+    }
+
     const ind = summary.individualUsage || {};
     const plan = ind.plan || {};
     const onDemand = ind.onDemand || {};
@@ -169,6 +199,8 @@ export async function collectCursor() {
     return {
       available: true,
       source: "local-token:cursor-dashboard-api",
+      totalTokens2026,
+      totalTokensMonth,
       membership: summary.membershipType || null,
       billingCycle: {
         start: summary.billingCycleStart || null,

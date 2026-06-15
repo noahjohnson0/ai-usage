@@ -28,12 +28,12 @@
     <text x="477" y="33" class="sub" text-anchor="end">2 machines</text>
 
     <g class="pop" style="animation-delay:.05s">
-      <text x="20" y="64" class="big">2.57B</text>
-      <text x="20" y="76" class="biglbl">TOTAL TOKENS</text>
+      <text x="20" y="64" class="big">2.52B</text>
+      <text x="20" y="76" class="biglbl">TOKENS IN 2026</text>
     </g>
     <g class="pop" style="animation-delay:.12s">
-      <text x="190" y="64" class="big">15.4M</text>
-      <text x="190" y="76" class="biglbl">GENERATED</text>
+      <text x="190" y="64" class="big">2.62B</text>
+      <text x="190" y="76" class="biglbl">ALL-TIME</text>
     </g>
     <g class="pop" style="animation-delay:.19s">
       <text x="350" y="64" class="big">14</text>
@@ -44,12 +44,12 @@
       <text x="20" y="96" class="lbl">Claude Code</text>
       <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#ffffff10"/>
       <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#d97757" class="bar" style="--bw:255px;animation-delay:0.15s"/>
-      <text x="477" y="96" class="val" text-anchor="end">2.09B tok</text>
+      <text x="477" y="96" class="val" text-anchor="end">2.14B tok</text>
     </g>
     <g class="row" style="animation-delay:0.27s">
       <text x="20" y="122" class="lbl">Cursor</text>
       <rect x="150" y="109" width="255" height="13" rx="6.5" fill="#ffffff10"/>
-      <rect x="150" y="109" width="58.78461861531824" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:58.78461861531824px;animation-delay:0.27s"/>
+      <rect x="150" y="109" width="57.537813959367774" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:57.537813959367774px;animation-delay:0.27s"/>
       <text x="477" y="122" class="val" text-anchor="end">482.3M tok</text>
     </g>
     <g class="row" style="animation-delay:0.39s">

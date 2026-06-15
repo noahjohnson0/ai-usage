@@ -6,22 +6,24 @@
     "platform": "win32",
     "arch": "x64"
   },
-  "collectedAt": "2026-06-15T19:49:53.753Z",
+  "collectedAt": "2026-06-15T20:13:19.099Z",
   "tools": {
     "claude": {
       "available": true,
       "source": "local:ccusage",
       "totals": {
-        "inputTokens": 2039587,
-        "outputTokens": 8874409,
-        "cacheCreationTokens": 32706152,
-        "cacheReadTokens": 2048541882,
-        "totalTokens": 2092162030
+        "inputTokens": 2093762,
+        "outputTokens": 9055533,
+        "cacheCreationTokens": 32981747,
+        "cacheReadTokens": 2093366693,
+        "totalTokens": 2137497735
       },
+      "totalTokens2026": 2137497735,
+      "totalTokensMonth": 2133102508,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1727254243
+          "totalTokens": 1772407510
         },
         {
           "model": "claude-fable-5",
@@ -33,7 +35,7 @@
         },
         {
           "model": "gpt-5.5",
-          "totalTokens": 4708242
+          "totalTokens": 4890680
         },
         {
           "model": "claude-opus-4-7",
@@ -79,7 +81,7 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 795520108
+          "totalTokens": 840855813
         }
       ],
       "days": 10
@@ -87,6 +89,8 @@
     "cursor": {
       "available": true,
       "source": "local-token:cursor-dashboard-api",
+      "totalTokens2026": 381925499,
+      "totalTokensMonth": 0,
       "membership": "pro",
       "billingCycle": {
         "start": "2026-06-07T20:59:17.000Z",

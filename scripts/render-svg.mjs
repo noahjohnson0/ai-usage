@@ -83,12 +83,12 @@ const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http
     <text x="${W - 18}" y="33" class="sub" text-anchor="end">${data.headline.machineCount} machine${data.headline.machineCount === 1 ? "" : "s"}</text>
 
     <g class="pop" style="animation-delay:.05s">
-      <text x="20" y="64" class="big">${human(data.headline.totalTokens)}</text>
-      <text x="20" y="76" class="biglbl">TOTAL TOKENS</text>
+      <text x="20" y="64" class="big">${human(data.headline.tokens2026)}</text>
+      <text x="20" y="76" class="biglbl">TOKENS IN 2026</text>
     </g>
     <g class="pop" style="animation-delay:.12s">
-      <text x="190" y="64" class="big">${human(data.headline.outputTokens)}</text>
-      <text x="190" y="76" class="biglbl">GENERATED</text>
+      <text x="190" y="64" class="big">${human(data.headline.totalTokens)}</text>
+      <text x="190" y="76" class="biglbl">ALL-TIME</text>
     </g>
     <g class="pop" style="animation-delay:.19s">
       <text x="350" y="64" class="big">${data.headline.modelsUsed}</text>

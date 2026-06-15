@@ -1,31 +1,33 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-15T19:49:53.989Z",
+  "generatedAt": "2026-06-15T20:13:19.329Z",
   "machines": [
     {
       "id": "svr",
       "platform": "win32",
-      "collectedAt": "2026-06-15T19:49:53.753Z"
+      "collectedAt": "2026-06-15T20:13:19.099Z"
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-15T19:49:53.988Z"
+      "collectedAt": "2026-06-15T20:13:19.328Z"
     }
   ],
   "tools": {
     "claude": {
       "available": true,
       "totals": {
-        "inputTokens": 2039587,
-        "outputTokens": 8874409,
-        "cacheCreationTokens": 32706152,
-        "cacheReadTokens": 2048541882,
-        "totalTokens": 2092162030
+        "inputTokens": 2093762,
+        "outputTokens": 9055533,
+        "cacheCreationTokens": 32981747,
+        "cacheReadTokens": 2093366693,
+        "totalTokens": 2137497735
       },
+      "totalTokens2026": 2137497735,
+      "totalTokensMonth": 2133102508,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1727254243
+          "totalTokens": 1772407510
         },
         {
           "model": "claude-fable-5",
@@ -37,7 +39,7 @@
         },
         {
           "model": "gpt-5.5",
-          "totalTokens": 4708242
+          "totalTokens": 4890680
         },
         {
           "model": "claude-opus-4-7",
@@ -83,19 +85,21 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 795520108
+          "totalTokens": 840855813
         }
       ],
       "byMachine": [
         {
           "machine": "svr",
-          "totalTokens": 2092162030
+          "totalTokens": 2137497735
         }
       ]
     },
     "cursor": {
       "available": true,
       "source": "local-token:cursor-dashboard-api",
+      "totalTokens2026": 381925499,
+      "totalTokensMonth": 0,
       "membership": "pro",
       "billingCycle": {
         "start": "2026-06-07T20:59:17.000Z",
@@ -157,7 +161,7 @@
           "totalTokens": 0
         }
       ],
-      "collectedAt": "2026-06-15T19:49:53.753Z",
+      "collectedAt": "2026-06-15T20:13:19.099Z",
       "machine": "svr"
     },
     "openrouter": {
@@ -173,8 +177,10 @@
     }
   },
   "headline": {
-    "totalTokens": 2574463783,
-    "outputTokens": 15392779,
+    "tokensMonth": 2133102508,
+    "tokens2026": 2519423234,
+    "totalTokens": 2619799488,
+    "outputTokens": 15573903,
     "modelsUsed": 14,
     "machineCount": 2
   }
