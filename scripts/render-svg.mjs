@@ -12,7 +12,7 @@ const repoRoot = path.resolve(fileURLToPath(import.meta.url), "../..");
 const data = JSON.parse(fs.readFileSync(path.join(repoRoot, "public", "usage.json"), "utf8"));
 
 const W = 495;
-const H = 220;
+const H = 246;
 
 function human(n) {
   if (n >= 1e9) return (n / 1e9).toFixed(2) + "B";
@@ -30,9 +30,9 @@ const claudeTok = t.claude?.totals?.totalTokens || 1e9;
 const rows = [];
 if (t.claude?.available) rows.push({ label: "Claude Code", display: human(t.claude.totals.totalTokens) + " tok", color: "#d97757", weight: t.claude.totals.totalTokens });
 if (t.cursor?.available) rows.push({ label: "Cursor", display: (t.cursor.totalTokens ? human(t.cursor.totalTokens) + " tok" : (t.cursor.plan?.used || 0) + " / " + (t.cursor.plan?.limit || 0) + " req"), color: "#3ec6b8", weight: t.cursor.totalTokens || 0.04 * claudeTok });
+if (t.kimi?.available) rows.push({ label: "Kimi", display: (t.kimi.totalTokens ? human(t.kimi.totalTokens) + " tok" : "active"), color: "#b07bf2", weight: t.kimi.totalTokens || 0.04 * claudeTok });
 if (t.codex?.available) rows.push({ label: "Codex", display: (t.codex.totalTokens ? human(t.codex.totalTokens) + " tok" : "active"), color: "#9aa0a6", weight: t.codex.totalTokens || 0.04 * claudeTok });
 if (t.openrouter?.available) rows.push({ label: "OpenRouter", display: "active", color: "#6e7bf2", weight: 0.06 * claudeTok });
-if (t.kimi?.available) rows.push({ label: "Kimi", display: "active", color: "#b07bf2", weight: 0.04 * claudeTok });
 
 const maxW = Math.max(...rows.map((r) => r.weight), 1);
 const barX = 150;

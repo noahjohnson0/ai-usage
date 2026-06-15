@@ -75,26 +75,26 @@ function mergeClaude(slices) {
   };
 }
 
-// Codex rollouts are local per machine, so sum tokens across hosts (like Claude).
-// The rate-limit % is account-level, so take the most recent snapshot.
-function mergeCodex(slices) {
-  const totals = { inputTokens: 0, cachedInputTokens: 0, outputTokens: 0, reasoningOutputTokens: 0, totalTokens: 0 };
+// Codex/Kimi usage lives in per-machine local logs (like Claude), so sum tokens
+// across hosts. Any rate-limit % is account-level, so take the most recent.
+function mergeSummed(slices, tool) {
+  const totals = { inputTokens: 0, outputTokens: 0, cacheCreationTokens: 0, cacheReadTokens: 0, totalTokens: 0 };
   const models = new Map();
   let any = false;
   let totalTokens2026 = 0;
   let totalTokensMonth = 0;
-  let sessions = 0;
+  let count = 0;
   let limitPercent = null;
   let weeklyPercent = null;
   let bestTs = "";
   for (const s of slices) {
-    const c = s.tools?.codex;
+    const c = s.tools?.[tool];
     if (!c?.available) continue;
     any = true;
     for (const k of Object.keys(totals)) totals[k] += c.totals?.[k] || 0;
     totalTokens2026 += c.totalTokens2026 || 0;
     totalTokensMonth += c.totalTokensMonth || 0;
-    sessions += c.sessions || 0;
+    count += c.sessions || c.turns || 0;
     for (const m of c.models || []) {
       const p = models.get(m.model) || { model: m.model, totalTokens: 0 };
       p.totalTokens += m.totalTokens;
@@ -107,17 +107,18 @@ function mergeCodex(slices) {
     }
   }
   if (!any) return { available: false };
-  return {
+  const out = {
     available: true,
     totals,
     totalTokens: totals.totalTokens,
     totalTokens2026,
     totalTokensMonth,
     models: [...models.values()].sort((a, b) => b.totalTokens - a.totalTokens),
-    limitPercent,
-    weeklyPercent,
-    sessions,
   };
+  if (limitPercent != null) out.limitPercent = limitPercent;
+  if (weeklyPercent != null) out.weeklyPercent = weeklyPercent;
+  if (count) out.count = count;
+  return out;
 }
 
 function mostRecent(slices, tool) {
@@ -148,8 +149,8 @@ const merged = {
     claude: mergeClaude(slices),
     cursor: mostRecent(slices, "cursor"),
     openrouter: mostRecent(slices, "openrouter"),
-    kimi: mostRecent(slices, "kimi"),
-    codex: mergeCodex(slices),
+    kimi: mergeSummed(slices, "kimi"),
+    codex: mergeSummed(slices, "codex"),
   },
 };
 
@@ -157,22 +158,22 @@ const merged = {
 const claude = merged.tools.claude;
 const cursor = merged.tools.cursor;
 const codex = merged.tools.codex;
+const kimi = merged.tools.kimi;
+const tokenTools = [claude, cursor, codex, kimi];
 const tokTool = (t) => (t.available ? t.totalTokens || t.totals?.totalTokens || 0 : 0);
 const p2026 = (t) => (t.available ? t.totalTokens2026 || 0 : 0);
 const pMonth = (t) => (t.available ? t.totalTokensMonth || 0 : 0);
+const sum = (fn) => tokenTools.reduce((a, t) => a + fn(t), 0);
 const claudeOut = claude.available ? claude.totals.outputTokens : 0;
 const cursorOut = cursor.available ? cursor.tokenTotals?.outputTokens || 0 : 0;
 const codexOut = codex.available ? codex.totals?.outputTokens || 0 : 0;
-const modelNames = new Set([
-  ...(claude.available ? claude.models.map((m) => m.model) : []),
-  ...(cursor.available ? (cursor.models || []).map((m) => m.model) : []),
-  ...(codex.available ? (codex.models || []).map((m) => m.model) : []),
-]);
+const kimiOut = kimi.available ? kimi.totals?.outputTokens || 0 : 0;
+const modelNames = new Set(tokenTools.flatMap((t) => (t.available ? (t.models || []).map((m) => m.model) : [])));
 merged.headline = {
-  tokensMonth: pMonth(claude) + pMonth(cursor) + pMonth(codex),
-  tokens2026: p2026(claude) + p2026(cursor) + p2026(codex),
-  totalTokens: tokTool(claude) + tokTool(cursor) + tokTool(codex), // all-time
-  outputTokens: claudeOut + cursorOut + codexOut,
+  tokensMonth: sum(pMonth),
+  tokens2026: sum(p2026),
+  totalTokens: sum(tokTool), // all-time
+  outputTokens: claudeOut + cursorOut + codexOut + kimiOut,
   modelsUsed: modelNames.size,
   machineCount: merged.machines.length,
 };

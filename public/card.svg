@@ -1,4 +1,4 @@
-<svg width="495" height="220" viewBox="0 0 495 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI usage stats">
+<svg width="495" height="246" viewBox="0 0 495 246" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI usage stats">
   <defs>
     <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#d97757"/>
@@ -21,22 +21,22 @@
       .pop{animation:fadeUp .7s ease backwards}
     </style>
   </defs>
-  <rect x="0.5" y="0.5" width="494" height="219" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <rect x="0.5" y="0.5" width="494" height="245" rx="14" fill="#0d1117" stroke="#30363d"/>
   <g class="card">
     <text x="20" y="32" class="title">AI Coding Usage</text>
     <text x="477" y="20" class="sub" text-anchor="end">updated 2026-06-15</text>
     <text x="477" y="33" class="sub" text-anchor="end">2 machines</text>
 
     <g class="pop" style="animation-delay:.05s">
-      <text x="20" y="64" class="big">2.54B</text>
+      <text x="20" y="64" class="big">2.80B</text>
       <text x="20" y="76" class="biglbl">TOKENS IN 2026</text>
     </g>
     <g class="pop" style="animation-delay:.12s">
-      <text x="190" y="64" class="big">2.64B</text>
+      <text x="190" y="64" class="big">2.90B</text>
       <text x="190" y="76" class="biglbl">ALL-TIME</text>
     </g>
     <g class="pop" style="animation-delay:.19s">
-      <text x="350" y="64" class="big">14</text>
+      <text x="350" y="64" class="big">15</text>
       <text x="350" y="76" class="biglbl">MODELS</text>
     </g>
     
@@ -44,25 +44,31 @@
       <text x="20" y="96" class="lbl">Claude Code</text>
       <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#ffffff10"/>
       <rect x="150" y="83" width="255" height="13" rx="6.5" fill="#d97757" class="bar" style="--bw:255px;animation-delay:0.15s"/>
-      <text x="477" y="96" class="val" text-anchor="end">2.15B tok</text>
+      <text x="477" y="96" class="val" text-anchor="end">2.17B tok</text>
     </g>
     <g class="row" style="animation-delay:0.27s">
       <text x="20" y="122" class="lbl">Cursor</text>
       <rect x="150" y="109" width="255" height="13" rx="6.5" fill="#ffffff10"/>
-      <rect x="150" y="109" width="57.11180940102331" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:57.11180940102331px;animation-delay:0.27s"/>
+      <rect x="150" y="109" width="56.71768154466906" height="13" rx="6.5" fill="#3ec6b8" class="bar" style="--bw:56.71768154466906px;animation-delay:0.27s"/>
       <text x="477" y="122" class="val" text-anchor="end">482.3M tok</text>
     </g>
     <g class="row" style="animation-delay:0.39s">
-      <text x="20" y="148" class="lbl">Codex</text>
+      <text x="20" y="148" class="lbl">Kimi</text>
       <rect x="150" y="135" width="255" height="13" rx="6.5" fill="#ffffff10"/>
-      <rect x="150" y="135" width="6" height="13" rx="6.5" fill="#9aa0a6" class="bar" style="--bw:6px;animation-delay:0.39s"/>
-      <text x="477" y="148" class="val" text-anchor="end">4.9M tok</text>
+      <rect x="150" y="135" width="28.978600904874742" height="13" rx="6.5" fill="#b07bf2" class="bar" style="--bw:28.978600904874742px;animation-delay:0.39s"/>
+      <text x="477" y="148" class="val" text-anchor="end">246.4M tok</text>
     </g>
     <g class="row" style="animation-delay:0.51s">
-      <text x="20" y="174" class="lbl">OpenRouter</text>
+      <text x="20" y="174" class="lbl">Codex</text>
       <rect x="150" y="161" width="255" height="13" rx="6.5" fill="#ffffff10"/>
-      <rect x="150" y="161" width="15.299999999999999" height="13" rx="6.5" fill="#6e7bf2" class="bar" style="--bw:15.299999999999999px;animation-delay:0.51s"/>
-      <text x="477" y="174" class="val" text-anchor="end">active</text>
+      <rect x="150" y="161" width="6" height="13" rx="6.5" fill="#9aa0a6" class="bar" style="--bw:6px;animation-delay:0.51s"/>
+      <text x="477" y="174" class="val" text-anchor="end">4.9M tok</text>
+    </g>
+    <g class="row" style="animation-delay:0.63s">
+      <text x="20" y="200" class="lbl">OpenRouter</text>
+      <rect x="150" y="187" width="255" height="13" rx="6.5" fill="#ffffff10"/>
+      <rect x="150" y="187" width="15.299999999999999" height="13" rx="6.5" fill="#6e7bf2" class="bar" style="--bw:15.299999999999999px;animation-delay:0.63s"/>
+      <text x="477" y="200" class="val" text-anchor="end">active</text>
     </g>
   </g>
 </svg>

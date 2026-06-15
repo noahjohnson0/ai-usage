@@ -1,33 +1,33 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-15T20:27:29.733Z",
+  "generatedAt": "2026-06-15T20:33:31.206Z",
   "machines": [
     {
       "id": "svr",
       "platform": "win32",
-      "collectedAt": "2026-06-15T20:26:55.069Z"
+      "collectedAt": "2026-06-15T20:33:30.942Z"
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-15T20:27:29.733Z"
+      "collectedAt": "2026-06-15T20:33:31.205Z"
     }
   ],
   "tools": {
     "claude": {
       "available": true,
       "totals": {
-        "inputTokens": 2097566,
-        "outputTokens": 9134648,
-        "cacheCreationTokens": 33118594,
-        "cacheReadTokens": 2109090806,
-        "totalTokens": 2153441614
+        "inputTokens": 2100233,
+        "outputTokens": 9190253,
+        "cacheCreationTokens": 33195379,
+        "cacheReadTokens": 2123919889,
+        "totalTokens": 2168405754
       },
-      "totalTokens2026": 2153441614,
-      "totalTokensMonth": 2149046387,
+      "totalTokens2026": 2168405754,
+      "totalTokensMonth": 2164010527,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1788351389
+          "totalTokens": 1803315529
         },
         {
           "model": "claude-fable-5",
@@ -85,13 +85,13 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 856799692
+          "totalTokens": 871763832
         }
       ],
       "byMachine": [
         {
           "machine": "svr",
-          "totalTokens": 2153441614
+          "totalTokens": 2168405754
         }
       ]
     },
@@ -161,7 +161,7 @@
           "totalTokens": 0
         }
       ],
-      "collectedAt": "2026-06-15T20:26:55.069Z",
+      "collectedAt": "2026-06-15T20:33:30.942Z",
       "machine": "svr"
     },
     "openrouter": {
@@ -170,15 +170,32 @@
       "hasPerModel": false
     },
     "kimi": {
-      "available": false
+      "available": true,
+      "totals": {
+        "inputTokens": 3865715,
+        "outputTokens": 696545,
+        "cacheCreationTokens": 0,
+        "cacheReadTokens": 241858779,
+        "totalTokens": 246421039
+      },
+      "totalTokens": 246421039,
+      "totalTokens2026": 246421039,
+      "totalTokensMonth": 246421039,
+      "models": [
+        {
+          "model": "kimi-for-coding",
+          "totalTokens": 246421039
+        }
+      ],
+      "count": 2085
     },
     "codex": {
       "available": true,
       "totals": {
         "inputTokens": 4870468,
-        "cachedInputTokens": 4445440,
         "outputTokens": 20212,
-        "reasoningOutputTokens": 7571,
+        "cacheCreationTokens": 0,
+        "cacheReadTokens": 0,
         "totalTokens": 4890680
       },
       "totalTokens": 4890680,
@@ -192,20 +209,20 @@
       ],
       "limitPercent": 31,
       "weeklyPercent": 5,
-      "sessions": 3
+      "count": 3
     }
   },
   "headline": {
-    "tokensMonth": 2153937067,
-    "tokens2026": 2540257793,
-    "totalTokens": 2640634047,
-    "outputTokens": 15673230,
-    "modelsUsed": 14,
+    "tokensMonth": 2415322246,
+    "tokens2026": 2801642972,
+    "totalTokens": 2902019226,
+    "outputTokens": 16425380,
+    "modelsUsed": 15,
     "machineCount": 2,
     "tokenAnchor": {
-      "value": 2540262988,
-      "atMs": 1781555249734,
-      "ratePerSec": 151
+      "value": 2801642972,
+      "atMs": 1781555611206,
+      "ratePerSec": 166
     }
   }
 }

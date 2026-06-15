@@ -6,24 +6,24 @@
     "platform": "win32",
     "arch": "x64"
   },
-  "collectedAt": "2026-06-15T20:26:55.069Z",
+  "collectedAt": "2026-06-15T20:33:30.942Z",
   "tools": {
     "claude": {
       "available": true,
       "source": "local:ccusage",
       "totals": {
-        "inputTokens": 2097566,
-        "outputTokens": 9134648,
-        "cacheCreationTokens": 33118594,
-        "cacheReadTokens": 2109090806,
-        "totalTokens": 2153441614
+        "inputTokens": 2100233,
+        "outputTokens": 9190253,
+        "cacheCreationTokens": 33195379,
+        "cacheReadTokens": 2123919889,
+        "totalTokens": 2168405754
       },
-      "totalTokens2026": 2153441614,
-      "totalTokensMonth": 2149046387,
+      "totalTokens2026": 2168405754,
+      "totalTokensMonth": 2164010527,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1788351389
+          "totalTokens": 1803315529
         },
         {
           "model": "claude-fable-5",
@@ -81,7 +81,7 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 856799692
+          "totalTokens": 871763832
         }
       ],
       "days": 10
@@ -159,8 +159,25 @@
       "hasPerModel": false
     },
     "kimi": {
-      "available": false,
-      "note": "no kimi session/key configured"
+      "available": true,
+      "source": "local:kimi-code-wire",
+      "totals": {
+        "inputTokens": 3865715,
+        "outputTokens": 696545,
+        "cacheCreationTokens": 0,
+        "cacheReadTokens": 241858779,
+        "totalTokens": 246421039
+      },
+      "totalTokens": 246421039,
+      "totalTokens2026": 246421039,
+      "totalTokensMonth": 246421039,
+      "models": [
+        {
+          "model": "kimi-for-coding",
+          "totalTokens": 246421039
+        }
+      ],
+      "turns": 2085
     },
     "codex": {
       "available": true,
