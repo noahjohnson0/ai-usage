@@ -68,6 +68,13 @@ if (push) {
       console.log("no changes to push");
     } else {
       git("commit", "-m", `data: usage from ${meta.id}`);
+      // The cloud Action pushes to public/ on a schedule, so the local clone
+      // drifts behind. Rebase before pushing (slice vs public/ never conflict).
+      try {
+        git("pull", "--rebase", "origin", "main");
+      } catch (e) {
+        console.error("pull --rebase warning:", e.message);
+      }
       git("push");
       console.log("pushed slice to hub");
     }
