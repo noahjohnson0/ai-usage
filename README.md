@@ -2,7 +2,7 @@
 
 Aggregate my AI coding-tool usage (Claude Code, Cursor, OpenRouter, Kimi, Codex)
 from every machine I use into one dataset, an animated GitHub profile card, and a
-dashboard on [nanlives](https://nanlives.vercel.app).
+dashboard on [nanlives](https://nanlives.com).
 
 ## Why it works the way it does
 
