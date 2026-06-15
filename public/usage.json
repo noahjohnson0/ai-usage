@@ -1,31 +1,31 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-15T19:15:02.518Z",
+  "generatedAt": "2026-06-15T19:15:30.155Z",
   "machines": [
     {
       "id": "svr",
       "platform": "win32",
-      "collectedAt": "2026-06-15T19:13:58.389Z"
+      "collectedAt": "2026-06-15T19:15:14.503Z"
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-15T19:15:02.518Z"
+      "collectedAt": "2026-06-15T19:15:30.155Z"
     }
   ],
   "tools": {
     "claude": {
       "available": true,
       "totals": {
-        "inputTokens": 1395520,
-        "outputTokens": 8361187,
-        "cacheCreationTokens": 31068107,
-        "cacheReadTokens": 1992022742,
-        "totalTokens": 2032847556
+        "inputTokens": 1395719,
+        "outputTokens": 8364122,
+        "cacheCreationTokens": 31071721,
+        "cacheReadTokens": 1992760382,
+        "totalTokens": 2033591944
       },
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1672647257
+          "totalTokens": 1673391645
         },
         {
           "model": "claude-fable-5",
@@ -83,13 +83,13 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 736205634
+          "totalTokens": 736950022
         }
       ],
       "byMachine": [
         {
           "machine": "svr",
-          "totalTokens": 2032847556
+          "totalTokens": 2033591944
         }
       ]
     },
@@ -112,7 +112,7 @@
       },
       "percentUsed": 0,
       "models": [],
-      "collectedAt": "2026-06-15T19:13:58.389Z",
+      "collectedAt": "2026-06-15T19:15:14.503Z",
       "machine": "svr"
     },
     "openrouter": {
@@ -128,8 +128,8 @@
     }
   },
   "headline": {
-    "totalTokens": 2032847556,
-    "outputTokens": 8361187,
+    "totalTokens": 2033591944,
+    "outputTokens": 8364122,
     "modelsUsed": 5,
     "machineCount": 2
   }
