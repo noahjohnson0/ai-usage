@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "machine": {
+    "id": "macbook-m4-max",
+    "hostname": "Noahs-MacBook-Pro.local",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "collectedAt": "2026-06-16T03:54:01.393Z",
+  "tools": {
+    "claude": {
+      "available": true,
+      "source": "local:ccusage",
+      "totals": {
+        "inputTokens": 6431307,
+        "outputTokens": 18281599,
+        "cacheCreationTokens": 86964880,
+        "cacheReadTokens": 3721822227,
+        "totalTokens": 3833500013
+      },
+      "totalTokens2026": 3833500013,
+      "totalTokensMonth": 1033036501,
+      "models": [
+        {
+          "model": "claude-opus-4-7",
+          "totalTokens": 2235556696
+        },
+        {
+          "model": "claude-opus-4-8",
+          "totalTokens": 1532628944
+        },
+        {
+          "model": "claude-haiku-4-5-20251001",
+          "totalTokens": 52795360
+        },
+        {
+          "model": "claude-fable-5",
+          "totalTokens": 6856665
+        },
+        {
+          "model": "gpt-oss:20b",
+          "totalTokens": 2018550
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "totalTokens": 2016965
+        },
+        {
+          "model": "kimi-for-coding",
+          "totalTokens": 754561
+        },
+        {
+          "model": "gpt-5.5",
+          "totalTokens": 334819
+        },
+        {
+          "model": "[pi] qwen3:14b",
+          "totalTokens": 142295
+        },
+        {
+          "model": "[pi] qwen3-coder:30b-a3b-q4_K_M",
+          "totalTokens": 124004
+        },
+        {
+          "model": "[pi] gemma4:e4b",
+          "totalTokens": 119113
+        },
+        {
+          "model": "[pi] gpt-oss:20b",
+          "totalTokens": 102766
+        },
+        {
+          "model": "[pi] devstral:24b",
+          "totalTokens": 39396
+        },
+        {
+          "model": "[pi] qwen2.5-coder:14b",
+          "totalTokens": 9879
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-05-09",
+          "totalTokens": 127339
+        },
+        {
+          "date": "2026-05-10",
+          "totalTokens": 382878
+        },
+        {
+          "date": "2026-05-13",
+          "totalTokens": 27236
+        },
+        {
+          "date": "2026-05-16",
+          "totalTokens": 671854
+        },
+        {
+          "date": "2026-05-17",
+          "totalTokens": 352660215
+        },
+        {
+          "date": "2026-05-18",
+          "totalTokens": 16947523
+        },
+        {
+          "date": "2026-05-19",
+          "totalTokens": 3397403
+        },
+        {
+          "date": "2026-05-20",
+          "totalTokens": 14708989
+        },
+        {
+          "date": "2026-05-21",
+          "totalTokens": 3645461
+        },
+        {
+          "date": "2026-05-22",
+          "totalTokens": 17553185
+        },
+        {
+          "date": "2026-05-23",
+          "totalTokens": 36942347
+        },
+        {
+          "date": "2026-05-24",
+          "totalTokens": 221855637
+        },
+        {
+          "date": "2026-05-25",
+          "totalTokens": 205959437
+        },
+        {
+          "date": "2026-05-26",
+          "totalTokens": 611334798
+        },
+        {
+          "date": "2026-05-27",
+          "totalTokens": 614224222
+        },
+        {
+          "date": "2026-05-28",
+          "totalTokens": 325451547
+        },
+        {
+          "date": "2026-05-29",
+          "totalTokens": 324613150
+        },
+        {
+          "date": "2026-05-30",
+          "totalTokens": 45892804
+        },
+        {
+          "date": "2026-05-31",
+          "totalTokens": 4067487
+        },
+        {
+          "date": "2026-06-01",
+          "totalTokens": 3798210
+        },
+        {
+          "date": "2026-06-02",
+          "totalTokens": 46598686
+        },
+        {
+          "date": "2026-06-03",
+          "totalTokens": 41288131
+        },
+        {
+          "date": "2026-06-04",
+          "totalTokens": 878204
+        },
+        {
+          "date": "2026-06-07",
+          "totalTokens": 204274475
+        },
+        {
+          "date": "2026-06-08",
+          "totalTokens": 281379
+        },
+        {
+          "date": "2026-06-10",
+          "totalTokens": 2585084
+        },
+        {
+          "date": "2026-06-11",
+          "totalTokens": 245159398
+        },
+        {
+          "date": "2026-06-12",
+          "totalTokens": 71776723
+        },
+        {
+          "date": "2026-06-13",
+          "totalTokens": 14269037
+        },
+        {
+          "date": "2026-06-14",
+          "totalTokens": 330773
+        },
+        {
+          "date": "2026-06-15",
+          "totalTokens": 401796401
+        }
+      ],
+      "days": 31
+    },
+    "cursor": {
+      "available": false,
+      "note": "cursor api call failed: https://cursor.com/api/usage-summary -> HTTP 401"
+    },
+    "openrouter": {
+      "available": false,
+      "note": "OPENROUTER_API_KEY not set"
+    },
+    "kimi": {
+      "available": false,
+      "note": "no kimi-code sessions on this machine"
+    },
+    "codex": {
+      "available": true,
+      "source": "local:codex-rollouts",
+      "totals": {
+        "inputTokens": 324987,
+        "cachedInputTokens": 277376,
+        "outputTokens": 9832,
+        "reasoningOutputTokens": 426,
+        "totalTokens": 334819
+      },
+      "totalTokens": 334819,
+      "totalTokens2026": 334819,
+      "totalTokensMonth": 334819,
+      "models": [
+        {
+          "model": "gpt-5.5",
+          "totalTokens": 334819
+        }
+      ],
+      "daily": [
+        {
+          "date": "2026-06-15",
+          "totalTokens": 334819
+        }
+      ],
+      "limitPercent": 3,
+      "weeklyPercent": 6,
+      "sessions": 7
+    }
+  }
+}
