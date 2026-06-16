@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-16T03:54:11.963Z",
+  "generatedAt": "2026-06-16T04:10:30.953Z",
   "machines": [
     {
       "id": "macbook-m4-max",
       "platform": "darwin",
-      "collectedAt": "2026-06-16T03:54:01.393Z"
+      "collectedAt": "2026-06-16T04:10:17.649Z"
     },
     {
       "id": "svr",
@@ -14,25 +14,25 @@
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-16T03:54:11.962Z"
+      "collectedAt": "2026-06-16T04:10:30.953Z"
     }
   ],
   "tools": {
     "claude": {
       "available": true,
       "totals": {
-        "inputTokens": 8665663,
-        "outputTokens": 27914423,
-        "cacheCreationTokens": 120921520,
-        "cacheReadTokens": 5959683315,
-        "totalTokens": 6117184921
+        "inputTokens": 8666164,
+        "outputTokens": 27927627,
+        "cacheCreationTokens": 121719487,
+        "cacheReadTokens": 5965053561,
+        "totalTokens": 6123366839
       },
-      "totalTokens2026": 6117184921,
-      "totalTokensMonth": 3312326182,
+      "totalTokens2026": 6123366839,
+      "totalTokensMonth": 3318508100,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 3450437553
+          "totalTokens": 3456619471
         },
         {
           "model": "claude-opus-4-7",
@@ -210,13 +210,17 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 1388839387
+          "totalTokens": 1393919929
+        },
+        {
+          "date": "2026-06-16",
+          "totalTokens": 1101376
         }
       ],
       "byMachine": [
         {
           "machine": "macbook-m4-max",
-          "totalTokens": 3833500013
+          "totalTokens": 3839681931
         },
         {
           "machine": "svr",
@@ -294,8 +298,8 @@
           "totalTokens": 0
         }
       ],
-      "collectedAt": "2026-06-15T22:18:58.369Z",
-      "machine": "svr"
+      "collectedAt": "2026-06-16T04:10:17.649Z",
+      "machine": "macbook-m4-max"
     },
     "openrouter": {
       "available": true,
@@ -366,15 +370,15 @@
     }
   },
   "headline": {
-    "tokensMonth": 3565824032,
-    "tokens2026": 6752608270,
-    "totalTokens": 6852984524,
-    "outputTokens": 35205957,
+    "tokensMonth": 3572005950,
+    "tokens2026": 6758790188,
+    "totalTokens": 6859166442,
+    "outputTokens": 35219161,
     "modelsUsed": 24,
     "machineCount": 3,
     "tokenAnchor": {
-      "value": 6752608270,
-      "atMs": 1781582051963,
+      "value": 6758790188,
+      "atMs": 1781583030955,
       "ratePerSec": 400
     }
   },
@@ -501,7 +505,11 @@
     },
     {
       "date": "2026-06-15",
-      "totalTokens": 1618052336
+      "totalTokens": 1623132878
+    },
+    {
+      "date": "2026-06-16",
+      "totalTokens": 1101376
     }
   ]
 }
