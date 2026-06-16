@@ -1,7 +1,12 @@
 {
   "schema": 1,
-  "generatedAt": "2026-06-16T01:31:43.017Z",
+  "generatedAt": "2026-06-16T03:54:11.963Z",
   "machines": [
+    {
+      "id": "macbook-m4-max",
+      "platform": "darwin",
+      "collectedAt": "2026-06-16T03:54:01.393Z"
+    },
     {
       "id": "svr",
       "platform": "win32",
@@ -9,86 +14,210 @@
     },
     {
       "id": "cloud",
-      "collectedAt": "2026-06-16T01:31:43.017Z"
+      "collectedAt": "2026-06-16T03:54:11.962Z"
     }
   ],
   "tools": {
     "claude": {
       "available": true,
       "totals": {
-        "inputTokens": 2234356,
-        "outputTokens": 9632824,
-        "cacheCreationTokens": 33956640,
-        "cacheReadTokens": 2237861088,
-        "totalTokens": 2283684908
+        "inputTokens": 8665663,
+        "outputTokens": 27914423,
+        "cacheCreationTokens": 120921520,
+        "cacheReadTokens": 5959683315,
+        "totalTokens": 6117184921
       },
-      "totalTokens2026": 2283684908,
-      "totalTokensMonth": 2279289681,
+      "totalTokens2026": 6117184921,
+      "totalTokensMonth": 3312326182,
       "models": [
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1917808609
-        },
-        {
-          "model": "claude-fable-5",
-          "totalTokens": 330482788
-        },
-        {
-          "model": "claude-haiku-4-5-20251001",
-          "totalTokens": 25321530
-        },
-        {
-          "model": "gpt-5.5",
-          "totalTokens": 5676754
+          "totalTokens": 3450437553
         },
         {
           "model": "claude-opus-4-7",
-          "totalTokens": 4395227
+          "totalTokens": 2239951923
+        },
+        {
+          "model": "claude-fable-5",
+          "totalTokens": 337339453
+        },
+        {
+          "model": "claude-haiku-4-5-20251001",
+          "totalTokens": 78116890
+        },
+        {
+          "model": "gpt-5.5",
+          "totalTokens": 6011573
+        },
+        {
+          "model": "gpt-oss:20b",
+          "totalTokens": 2018550
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "totalTokens": 2016965
+        },
+        {
+          "model": "kimi-for-coding",
+          "totalTokens": 754561
+        },
+        {
+          "model": "[pi] qwen3:14b",
+          "totalTokens": 142295
+        },
+        {
+          "model": "[pi] qwen3-coder:30b-a3b-q4_K_M",
+          "totalTokens": 124004
+        },
+        {
+          "model": "[pi] gemma4:e4b",
+          "totalTokens": 119113
+        },
+        {
+          "model": "[pi] gpt-oss:20b",
+          "totalTokens": 102766
+        },
+        {
+          "model": "[pi] devstral:24b",
+          "totalTokens": 39396
+        },
+        {
+          "model": "[pi] qwen2.5-coder:14b",
+          "totalTokens": 9879
         }
       ],
       "daily": [
         {
+          "date": "2026-05-09",
+          "totalTokens": 127339
+        },
+        {
+          "date": "2026-05-10",
+          "totalTokens": 382878
+        },
+        {
+          "date": "2026-05-13",
+          "totalTokens": 27236
+        },
+        {
+          "date": "2026-05-16",
+          "totalTokens": 671854
+        },
+        {
+          "date": "2026-05-17",
+          "totalTokens": 352660215
+        },
+        {
+          "date": "2026-05-18",
+          "totalTokens": 16947523
+        },
+        {
+          "date": "2026-05-19",
+          "totalTokens": 3397403
+        },
+        {
+          "date": "2026-05-20",
+          "totalTokens": 14708989
+        },
+        {
+          "date": "2026-05-21",
+          "totalTokens": 3645461
+        },
+        {
           "date": "2026-05-22",
-          "totalTokens": 210305
+          "totalTokens": 17763490
         },
         {
           "date": "2026-05-23",
-          "totalTokens": 4123779
+          "totalTokens": 41066126
+        },
+        {
+          "date": "2026-05-24",
+          "totalTokens": 221855637
+        },
+        {
+          "date": "2026-05-25",
+          "totalTokens": 205959437
+        },
+        {
+          "date": "2026-05-26",
+          "totalTokens": 611334798
         },
         {
           "date": "2026-05-27",
-          "totalTokens": 61143
+          "totalTokens": 614285365
+        },
+        {
+          "date": "2026-05-28",
+          "totalTokens": 325451547
+        },
+        {
+          "date": "2026-05-29",
+          "totalTokens": 324613150
+        },
+        {
+          "date": "2026-05-30",
+          "totalTokens": 45892804
+        },
+        {
+          "date": "2026-05-31",
+          "totalTokens": 4067487
+        },
+        {
+          "date": "2026-06-01",
+          "totalTokens": 3798210
+        },
+        {
+          "date": "2026-06-02",
+          "totalTokens": 46598686
         },
         {
           "date": "2026-06-03",
-          "totalTokens": 704609
+          "totalTokens": 41992740
+        },
+        {
+          "date": "2026-06-04",
+          "totalTokens": 878204
         },
         {
           "date": "2026-06-07",
-          "totalTokens": 878057
+          "totalTokens": 205152532
+        },
+        {
+          "date": "2026-06-08",
+          "totalTokens": 281379
+        },
+        {
+          "date": "2026-06-10",
+          "totalTokens": 2585084
         },
         {
           "date": "2026-06-11",
-          "totalTokens": 338175062
+          "totalTokens": 583334460
         },
         {
           "date": "2026-06-12",
-          "totalTokens": 123604076
+          "totalTokens": 195380799
         },
         {
           "date": "2026-06-13",
-          "totalTokens": 255231197
+          "totalTokens": 269500234
         },
         {
           "date": "2026-06-14",
-          "totalTokens": 573653694
+          "totalTokens": 573984467
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 987042986
+          "totalTokens": 1388839387
         }
       ],
       "byMachine": [
+        {
+          "machine": "macbook-m4-max",
+          "totalTokens": 3833500013
+        },
         {
           "machine": "svr",
           "totalTokens": 2283684908
@@ -210,85 +339,169 @@
     "codex": {
       "available": true,
       "totals": {
-        "inputTokens": 5643979,
-        "outputTokens": 32775,
+        "inputTokens": 5968966,
+        "outputTokens": 42607,
         "cacheCreationTokens": 0,
         "cacheReadTokens": 0,
-        "totalTokens": 5676754
+        "totalTokens": 6011573
       },
-      "totalTokens": 5676754,
-      "totalTokens2026": 5676754,
-      "totalTokensMonth": 5676754,
+      "totalTokens": 6011573,
+      "totalTokens2026": 6011573,
+      "totalTokensMonth": 6011573,
       "models": [
         {
           "model": "gpt-5.5",
-          "totalTokens": 5676754
+          "totalTokens": 6011573
         }
       ],
       "daily": [
         {
           "date": "2026-06-15",
-          "totalTokens": 5676754
+          "totalTokens": 6011573
         }
       ],
-      "limitPercent": 10,
-      "weeklyPercent": 7,
-      "count": 4
+      "limitPercent": 3,
+      "weeklyPercent": 6,
+      "count": 11
     }
   },
   "headline": {
-    "tokensMonth": 2532452712,
-    "tokens2026": 2918773438,
-    "totalTokens": 3019149692,
-    "outputTokens": 16914526,
-    "modelsUsed": 16,
-    "machineCount": 2,
+    "tokensMonth": 3565824032,
+    "tokens2026": 6752608270,
+    "totalTokens": 6852984524,
+    "outputTokens": 35205957,
+    "modelsUsed": 24,
+    "machineCount": 3,
     "tokenAnchor": {
-      "value": 2920774083,
-      "atMs": 1781573503018,
-      "ratePerSec": 173
+      "value": 6752608270,
+      "atMs": 1781582051963,
+      "ratePerSec": 400
     }
   },
   "dailyCombined": [
     {
+      "date": "2026-05-09",
+      "totalTokens": 127339
+    },
+    {
+      "date": "2026-05-10",
+      "totalTokens": 382878
+    },
+    {
+      "date": "2026-05-13",
+      "totalTokens": 27236
+    },
+    {
+      "date": "2026-05-16",
+      "totalTokens": 671854
+    },
+    {
+      "date": "2026-05-17",
+      "totalTokens": 352660215
+    },
+    {
+      "date": "2026-05-18",
+      "totalTokens": 16947523
+    },
+    {
+      "date": "2026-05-19",
+      "totalTokens": 3397403
+    },
+    {
+      "date": "2026-05-20",
+      "totalTokens": 14708989
+    },
+    {
+      "date": "2026-05-21",
+      "totalTokens": 3645461
+    },
+    {
       "date": "2026-05-22",
-      "totalTokens": 210305
+      "totalTokens": 17763490
     },
     {
       "date": "2026-05-23",
-      "totalTokens": 4123779
+      "totalTokens": 41066126
+    },
+    {
+      "date": "2026-05-24",
+      "totalTokens": 221855637
+    },
+    {
+      "date": "2026-05-25",
+      "totalTokens": 205959437
+    },
+    {
+      "date": "2026-05-26",
+      "totalTokens": 611334798
     },
     {
       "date": "2026-05-27",
-      "totalTokens": 61143
+      "totalTokens": 614285365
+    },
+    {
+      "date": "2026-05-28",
+      "totalTokens": 325451547
+    },
+    {
+      "date": "2026-05-29",
+      "totalTokens": 324613150
+    },
+    {
+      "date": "2026-05-30",
+      "totalTokens": 45892804
+    },
+    {
+      "date": "2026-05-31",
+      "totalTokens": 4067487
+    },
+    {
+      "date": "2026-06-01",
+      "totalTokens": 3798210
+    },
+    {
+      "date": "2026-06-02",
+      "totalTokens": 46598686
     },
     {
       "date": "2026-06-03",
-      "totalTokens": 704609
+      "totalTokens": 41992740
+    },
+    {
+      "date": "2026-06-04",
+      "totalTokens": 878204
     },
     {
       "date": "2026-06-07",
-      "totalTokens": 878057
+      "totalTokens": 205152532
+    },
+    {
+      "date": "2026-06-08",
+      "totalTokens": 281379
+    },
+    {
+      "date": "2026-06-10",
+      "totalTokens": 2585084
     },
     {
       "date": "2026-06-11",
-      "totalTokens": 338175062
+      "totalTokens": 583334460
     },
     {
       "date": "2026-06-12",
-      "totalTokens": 123604076
+      "totalTokens": 195380799
     },
     {
       "date": "2026-06-13",
-      "totalTokens": 268937518
+      "totalTokens": 283206555
     },
     {
       "date": "2026-06-14",
-      "totalTokens": 583167036
+      "totalTokens": 583497809
     },
     {
       "date": "2026-06-15",
-      "totalTokens": 1215921116
+      "totalTokens": 1618052336
     }
   ]
 }
