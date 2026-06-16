@@ -6,20 +6,20 @@
     "platform": "darwin",
     "arch": "arm64"
   },
-  "collectedAt": "2026-06-16T03:54:01.393Z",
+  "collectedAt": "2026-06-16T04:10:17.649Z",
   "tools": {
     "claude": {
       "available": true,
       "source": "local:ccusage",
       "totals": {
-        "inputTokens": 6431307,
-        "outputTokens": 18281599,
-        "cacheCreationTokens": 86964880,
-        "cacheReadTokens": 3721822227,
-        "totalTokens": 3833500013
+        "inputTokens": 6431808,
+        "outputTokens": 18294803,
+        "cacheCreationTokens": 87762847,
+        "cacheReadTokens": 3727192473,
+        "totalTokens": 3839681931
       },
-      "totalTokens2026": 3833500013,
-      "totalTokensMonth": 1033036501,
+      "totalTokens2026": 3839681931,
+      "totalTokensMonth": 1039218419,
       "models": [
         {
           "model": "claude-opus-4-7",
@@ -27,7 +27,7 @@
         },
         {
           "model": "claude-opus-4-8",
-          "totalTokens": 1532628944
+          "totalTokens": 1538810862
         },
         {
           "model": "claude-haiku-4-5-20251001",
@@ -201,14 +201,85 @@
         },
         {
           "date": "2026-06-15",
-          "totalTokens": 401796401
+          "totalTokens": 406876943
+        },
+        {
+          "date": "2026-06-16",
+          "totalTokens": 1101376
         }
       ],
-      "days": 31
+      "days": 32
     },
     "cursor": {
-      "available": false,
-      "note": "cursor api call failed: https://cursor.com/api/usage-summary -> HTTP 401"
+      "available": true,
+      "source": "local-token:cursor-dashboard-api",
+      "totalTokens2026": 382990737,
+      "totalTokensMonth": 1065238,
+      "membership": "pro",
+      "billingCycle": {
+        "start": "2026-06-07T20:59:17.000Z",
+        "end": "2026-07-07T20:59:17.000Z"
+      },
+      "plan": {
+        "used": 32,
+        "limit": 2000,
+        "remaining": 1968
+      },
+      "onDemand": {
+        "used": 0,
+        "limit": 10000
+      },
+      "percentUsed": 0.1641025641025641,
+      "totalTokens": 483366991,
+      "tokenTotals": {
+        "inputTokens": 17710037,
+        "outputTokens": 6552382,
+        "cacheCreationTokens": 22543936,
+        "cacheReadTokens": 436560636,
+        "totalTokens": 483366991
+      },
+      "models": [
+        {
+          "model": "default",
+          "totalTokens": 414918376
+        },
+        {
+          "model": "gpt-5.2",
+          "totalTokens": 40476665
+        },
+        {
+          "model": "composer-1",
+          "totalTokens": 15581840
+        },
+        {
+          "model": "claude-3.5-sonnet",
+          "totalTokens": 6196899
+        },
+        {
+          "model": "claude-4.5-sonnet-thinking",
+          "totalTokens": 5127973
+        },
+        {
+          "model": "composer-2.5",
+          "totalTokens": 1065238
+        },
+        {
+          "model": "claude-4-sonnet",
+          "totalTokens": 0
+        },
+        {
+          "model": "gpt-4o",
+          "totalTokens": 0
+        },
+        {
+          "model": "gpt-4o-mini",
+          "totalTokens": 0
+        },
+        {
+          "model": "claude-4-sonnet-thinking",
+          "totalTokens": 0
+        }
+      ]
     },
     "openrouter": {
       "available": false,
