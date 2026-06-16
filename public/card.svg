@@ -24,7 +24,7 @@
   <rect x="0.5" y="0.5" width="494" height="245" rx="14" fill="#0d1117" stroke="#30363d"/>
   <g class="card">
     <text x="20" y="32" class="title">AI Coding Usage</text>
-    <text x="477" y="20" class="sub" text-anchor="end">updated 2026-06-15</text>
+    <text x="477" y="20" class="sub" text-anchor="end">updated 2026-06-16</text>
     <text x="477" y="33" class="sub" text-anchor="end">2 machines</text>
 
     <g class="pop" style="animation-delay:.05s">
